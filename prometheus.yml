@@ -22,52 +22,53 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['63.141.38.2:9177']
-    metric_relabel_configs:
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_info_maximum_memory_bytes'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_info_memory_usage_bytes'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_info_cpu_time_seconds_total'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_memory_stats_current_balloon_bytes'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_block_stats_read_bytes_total'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_block_stats_read_requests_total'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_block_stats_write_bytes_total'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_block_stats_write_requests_total'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_block_stats_read_time_seconds_total'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_block_stats_write_time_seconds_total'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_block_stats_capacity_bytes'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_interface_stats_receive_bytes_total'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_interface_stats_receive_packets_total'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_interface_stats_transmit_bytes_total'
-        action: keep
-      - source_labels: [__name__]
-        regex: 'libvirt_domain_interface_stats_transmit_packets_total'
-        action: keep
+#    metric_relabel_configs:
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_info_maximum_memory_bytes'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_info_memory_usage_bytes'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_info_cpu_time_seconds_total'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_memory_stats_current_balloon_bytes'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_block_stats_read_bytes_total'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_block_stats_read_requests_total'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_block_stats_write_bytes_total'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_block_stats_write_requests_total'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_block_stats_read_time_seconds_total'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_block_stats_write_time_seconds_total'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_block_stats_capacity_bytes'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_interface_stats_receive_bytes_total'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_interface_stats_receive_packets_total'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_interface_stats_transmit_bytes_total'
+#        action: keep
+#      - source_labels: [__name__]
+#        regex: 'libvirt_domain_interface_stats_transmit_packets_total'
+#        action: keep
+
   # - job_name: 'postgres'
   #   scrape_interval: 5s
   #   static_configs:
