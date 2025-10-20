@@ -10,19 +10,64 @@ global:
 # Here it's Prometheus itself.
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: 'prometheus'
+  #- job_name: 'prometheus'
 
     # Override the global default and scrape targets from this job every 5 seconds.
-    scrape_interval: 5s
+    #scrape_interval: 5s
 
-    static_configs:
-      - targets: ['localhost:9090']
+    #static_configs:
+      #- targets: ['localhost:9090']
   
   - job_name: 'vm_metrics'
     scrape_interval: 5s
     static_configs:
-      - targets: ['63.141.38.2:9100']
-
+      - targets: ['63.141.38.2:9177']
+    metric_relabel_configs:
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_info_maximum_memory_bytes'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_info_memory_usage_bytes'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_info_cpu_time_seconds_total'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_memory_stats_current_balloon_bytes'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_block_stats_read_bytes_total'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_block_stats_read_requests_total'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_block_stats_write_bytes_total'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_block_stats_write_requests_total'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_block_stats_read_time_seconds_total'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_block_stats_write_time_seconds_total'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_block_stats_capacity_bytes'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_interface_stats_receive_bytes_total'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_interface_stats_receive_packets_total'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_interface_stats_transmit_bytes_total'
+        action: keep
+      - source_labels: [__name__]
+        regex: 'libvirt_domain_interface_stats_transmit_packets_total'
+        action: keep
   # - job_name: 'postgres'
   #   scrape_interval: 5s
   #   static_configs:
